@@ -1,20 +1,56 @@
+<script setup>
+const emit = defineEmits('toggleModal');
+const openModal = () => {
+  emit('toggleModal')
+}
+
+</script>
 <template>
   <header class="header">
     <div class="container">
       <div class="header-box">
-        <router-link to="./index.html" class="header-logo logo">
+        <router-link to="/" class="header-logo logo">
           <img src="../assets/images/logo.png" alt="logo"/>
-        </router-link>`
+        </router-link>
+        `
         <div class="header-controls">
           <button class="btn btn-primary"><img src="../assets/images/icons/user.png" alt="user">Войти</button>
-          <button class="btn btn-outline" id="cart-button"><img src="../assets/images/icons/shopping-cart.png" alt="shopping-cart">Корзина
+          <button class="btn btn-outline" @click="openModal()">
+            <img src="../assets/images/icons/shopping-cart.png"
+                 alt="shopping-cart">Корзина
           </button>
         </div>
       </div>
     </div>
   </header>
 </template>
-<script>
-export default{}
-</script>
-<style></style>
+
+<style scope>
+.logo {
+  max-width: 100px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  min-height: 124px;
+}
+
+.header-box {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+</style>

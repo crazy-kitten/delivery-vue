@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <section class="banner">
     <div class="container">
@@ -22,151 +19,29 @@
         <input type="text" class="product-header--search" placeholder="Поиск блюд и ресторанов">
       </div>
       <div class="products-wrapper" id="rests-container">
-        <router-link to="/goods" class="products-card">
+        <router-link to="/goods"
+                     class="products-card"
+                     v-for="rest in restArray"
+                     :key="rest.id">
           <div class="products-cars__image">
-            <img src="../assets/images/rests/image.jpg" alt="rest-1">
+            <img :src="getUrl(rest.image)" alt="rest-1">
           </div>
           <div class="products-card__descriptions">
             <div class="products-card__descriptions-row">
-              <h4 class="products-card__descriptions--title">Пицца плюс</h4>
-              <div class="products-card__descriptions--badge"> 50 min</div>
+              <h4 class="products-card__descriptions--title">{{rest.title}}</h4>
+              <div class="products-card__descriptions--badge"> {{rest.time}}} min</div>
             </div>
             <div class="products-card__descriptions-row">
               <div class="products-card__descriptions-info">
                 <div class="products-card__descriptions-info--raiting">
                   <img src="../assets/images/icons/star.svg" alt="star">
-                  4.5
+                  {{rest.rating}}}
                 </div>
                 <div class="products-card__descriptions-info--price">
-                  От 900 Р
+                  От {{rest.price}} Р
                 </div>
                 <div class="products-card__descriptions-info--group">
-                  Пицца
-                </div>
-              </div>
-            </div>
-          </div>
-        </router-link>
-        <router-link to="/goods" class="products-card">
-          <div class="products-cars__image">
-            <img src="../assets/images/rests/image%20(1).jpg" alt="rest-2">
-          </div>
-          <div class="products-card__descriptions">
-            <div class="products-card__descriptions-row">
-              <h4 class="products-card__descriptions--title">Тануки</h4>
-              <div class="products-card__descriptions--badge"> 50 min</div>
-            </div>
-            <div class="products-card__descriptions-row">
-              <div class="products-card__descriptions-info">
-                <div class="products-card__descriptions-info--raiting">
-                  <img src="../assets/images/icons/star.svg" alt="star">
-                  4.5
-                </div>
-                <div class="products-card__descriptions-info--price">
-                  От 900 Р
-                </div>
-                <div class="products-card__descriptions-info--group">
-                  Пицца
-                </div>
-              </div>
-            </div>
-          </div>
-        </router-link>
-        <router-link to="goods" class="products-card">
-          <div class="products-cars__image">
-            <img src="../assets/images/rests/image%20(2).jpg" alt="rest-3">
-          </div>
-          <div class="products-card__descriptions">
-            <div class="products-card__descriptions-row">
-              <h4 class="products-card__descriptions--title">FoodBand</h4>
-              <div class="products-card__descriptions--badge"> 50 min</div>
-            </div>
-            <div class="products-card__descriptions-row">
-              <div class="products-card__descriptions-info">
-                <div class="products-card__descriptions-info--raiting">
-                  <img src="../assets/images/icons/star.svg" alt="star">
-                  4.5
-                </div>
-                <div class="products-card__descriptions-info--price">
-                  От 900 Р
-                </div>
-                <div class="products-card__descriptions-info--group">
-                  Пицца
-                </div>
-              </div>
-            </div>
-          </div>
-        </router-link>
-        <router-link to="goods" class="products-card">
-          <div class="products-cars__image">
-            <img src="../assets/images/rests/image%20(3).jpg" alt="rest-4">
-          </div>
-          <div class="products-card__descriptions">
-            <div class="products-card__descriptions-row">
-              <h4 class="products-card__descriptions--title">Жадина-пицца</h4>
-              <div class="products-card__descriptions--badge"> 50 min</div>
-            </div>
-            <div class="products-card__descriptions-row">
-              <div class="products-card__descriptions-info">
-                <div class="products-card__descriptions-info--raiting">
-                  <img src="../assets/images/icons/star.svg" alt="star">
-                  4.5
-                </div>
-                <div class="products-card__descriptions-info--price">
-                  От 900 Р
-                </div>
-                <div class="products-card__descriptions-info--group">
-                  Пицца
-                </div>
-              </div>
-            </div>
-          </div>
-        </router-link>
-        <router-link to="goods" class="products-card">
-          <div class="products-cars__image">
-            <img src="../assets/images/rests/image%20(4).jpg" alt="rest-5">
-          </div>
-          <div class="products-card__descriptions">
-            <div class="products-card__descriptions-row">
-              <h4 class="products-card__descriptions--title">Точка еды</h4>
-              <div class="products-card__descriptions--badge"> 50 min</div>
-            </div>
-            <div class="products-card__descriptions-row">
-              <div class="products-card__descriptions-info">
-                <div class="products-card__descriptions-info--raiting">
-                  <img src="./images/icons/star.svg" alt="star">
-                  4.5
-                </div>
-                <div class="products-card__descriptions-info--price">
-                  От 900 Р
-                </div>
-                <div class="products-card__descriptions-info--group">
-                  Пицца
-                </div>
-              </div>
-            </div>
-          </div>
-        </router-link>
-        <router-link to="goods" class="products-card">
-          <div class="products-cars__image">
-            <img src="../assets/images/rests/image%20(5).jpg" alt="rest-6">
-          </div>
-          <div class="products-card__descriptions">
-            <div class="products-card__descriptions-row">
-              <h4 class="products-card__descriptions--title">PizzaBurger</h4>
-              <div class="products-card__descriptions--badge"> 50 min</div>
-            </div>
-            <div class="products-card__descriptions-row">
-              <div class="products-card__descriptions-info">
-                <div class="products-card__descriptions-info--raiting">
-                  <img src="../assets/images/icons/star.svg" alt="star">
-                  4.5
-                </div>
-                <div class="products-card__descriptions-info--price">
-                  От 900 Р
-                </div>
-                <div class="products-card__descriptions-info--group">
-                  Пицца
+                  {{rest.type}}
                 </div>
               </div>
             </div>
@@ -176,6 +51,13 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import {restArray} from "@/constants/rests.js";
+const getUrl = (name)=>{
+  return new URL(`../assets/images/rests/${name}`, import.meta.url)
+}
+</script>
 
 <style scoped>
 
